@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../styles/diseñoLogin.css">
+</head>
+<body>
+    <main>
+        <section class="container-login">
+            <div class="login">
+                <h1>Admin Login</h1>
+                <p>Accede al panel de administración</p>
+
+                <form id="loginForm" class="form">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="pass">Contraseña</label>
+                    <input type="password" name="pass" id="pass" required>
+
+                    <input type="submit" value="Iniciar sesión" name="login" class="form--button">
+                </form>                
+
+                <a href="../../index.php">Volver al Blog</a>
+            </div>  
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../js/loginValidation.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+:root {
+    --color-title: #4ecdc4;
+    --color-fondo:#f7f7f7;
+    --color-fondo-tarjeta:#fff;
+    --color-parrafo:#7d7d7d;
+    --color-hover-boton: #35a19a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--color-fondo)
+}
+
+main {
+    height: 100vh;
+}
+
+.container-section {
+    width: 330px;
+    height: 360px;
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-top: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-article {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    margin-left: 20px;
+}
+
+.container-article h1 {
+    font-size: 2.2rem;
+    margin-top: 10px;
+    color: var(--color-title);
+}
+
+.container-article p {
+    width: 78%;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: var(--color-parrafo);
+    text-align: start;
+}
+
+.container-article a {
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    background-color: var(--color-title);
+    color: var(--color-fondo-tarjeta);
+    border-radius: 5px;
+    display: flex;             
+    justify-content: center;   
+    align-items: center;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.container-article a:hover {
+    background-color: var(--color-hover-boton);
+    transition: .5s;
+}
+
+.container-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.container-image img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}

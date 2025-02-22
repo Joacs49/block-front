@@ -1,0 +1,29 @@
+:root {
+    --color-primario: #ff6b6b;
+    --color-secundario: #f4f4f4;
+    --color-terciario: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container-footer {
+    flex: 1;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 1.2rem;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}

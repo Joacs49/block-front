@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    background-color: #f7f7f7;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-menu {
+    width: 350px;
+    height: 430px;
+    margin-top: 30px;
+    margin-left: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-menu h1 {
+    color: #49cdc3;
+    margin: 20px 0 20px 20px;
+}
+
+.container-nenu-nav ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.container-nenu-nav ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.container-nenu-nav ul li span {
+    display: inline-block;
+    height: 15px;
+}
+
+.container-nenu-nav ul li span img {
+    height: 15px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.container-nenu-nav ul li .menu-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.container-nenu-nav ul li .menu-link:hover {
+    color:#49cdc3;
+}
+
+.container-nenu-nav ul li .menu-link--active {
+    color: #49cdc3;
+}
+
+.container-data {
+    width: 800px;
+    height: 430px;
+    margin-top: 30px;
+    margin-left: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-data h1 {
+    color: #49cdc3;
+    margin: 20px 0 20px 20px;
+}
