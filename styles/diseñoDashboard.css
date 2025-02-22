@@ -1,0 +1,95 @@
+:root {
+    --background-color: #f7f7f7;
+    --title-color: #49cdc3; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.color--modified {
+    color: var(--title-color);
+    margin: 20px 0 20px 20px;
+}
+
+.container-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.container-content div {
+    width: 242px;
+    height: 90px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-content div h2 {
+    font-size: 2.0rem;
+    color: var(--title-color);
+    margin-bottom: 5px;
+}
+
+.container-statistics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.data { 
+    width: 450px;
+    height: 140px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.data h2 {
+    color: var(--title-color);
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.data p {
+    
+    margin-left: 20px;
+}
+
+.datetime {
+    width: 280px;
+    height: 140px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.datetime p {
+    margin-bottom: 10px;
+    width: 94%;
+    align-self: flex-end; 
+}
+
+.datetime p:nth-child(2) {
+    width: 94%;
+    align-self: flex-end;  
+}
+
+.datetime p b {
+    color: var(--title-color);
+}

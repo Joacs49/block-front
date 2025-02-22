@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table-posts {
+    border-collapse: collapse;
+    margin-left: 20px;
+}
+
+.table-posts tr th {
+    height: 40px;
+    text-align: start;
+    color: #fff;
+    background-color: #4ecdc4;
+    padding-left: 10px;
+}
+
+.table-posts tr th:first-child {
+    width: 350px;
+}
+
+.table-posts tr th:nth-child(2) {
+    width: 180px;
+}
+
+.table-posts tr th:last-child {
+    width: 230px;
+}
+
+.table-posts tr td {
+    color: #465865;
+    border-bottom: 1px solid #ddd; 
+    padding: 10px 0 10px 10px;
+}
+
+.table-posts tr td:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+.table-posts tr td a {
+    text-decoration: none;
+    padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.table-posts tr td a:first-child:hover {
+    background-color: #f7c500;
+    transition: .5s;
+}
+
+.table-posts tr td a:last-child:hover {
+    background-color: #ff0000;
+    transition: .5s;
+}
+
+.table-posts tr td a span {
+    display: inline-block;
+    height: 18px;
+}
+
+.table-posts tr td a span img {
+    height: 18px;
+    object-fit: cover;
+    margin-right: 3px;
+}
+
+.color--yellow {
+    color: #465865;
+    background-color: #ffd93d;
+}
+
+.color--red {
+    color: #fff;
+    background-color: #ff6565;
+}
+
+.new-post {
+    width: 180px;
+    color: #fff;
+    background-color: #4ecdc4;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 150px;
+    margin-left: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-post span {
+    display: flex;
+    align-items: center;
+}
+
+.new-post span img {
+    height: 15px;
+}
+
+.new-post:hover {
+    background-color: #04bbaf;
+    transition: .5s;
+}
