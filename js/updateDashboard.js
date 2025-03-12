@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updatePost();
             shouldIncrementView() ? updateView() : getView();
             updateLastPost();
-            obs.disconnect();
+            //obs.disconnect();
         })();
     });
     observer.observe(document.body, {childList:true, subtree:true});

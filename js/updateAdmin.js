@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.error("Ocurrio un problema al actualizar el usuario: ", error)
                 }
             });
-            obs.disconnect();
+            //obs.disconnect();
         }
     });
     observe.observe(document.body, { childList: true, subtree: true });

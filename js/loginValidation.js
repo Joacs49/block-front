@@ -24,7 +24,6 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         response.data.result?.token ? (() => {
             localStorage.setItem("token", response.data.result.token);
             localStorage.setItem("email", email);
-            localStorage.setItem("pass", pass);
             localStorage.setItem("name", userData.name || "");
             localStorage.setItem("id", Number(userData.user_id ?? 0));
             window.location.href = "admin.php";

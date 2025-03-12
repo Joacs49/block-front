@@ -5,12 +5,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const observer = new MutationObserver((mutations, obs) => {
         const postTable = document.getElementById("postTable");
 
-        postTable && ((cachedPosts.length === 0 ? getPosts() : renderPosts(cachedPosts)), obs.disconnect());
+        postTable &&
+            ((cachedPosts.length === 0 ? getPosts() : renderPosts(cachedPosts)), obs.disconnect()) 
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
-});
 
+    // Intervalo para verificar si la tabla está vacía
+    setInterval(() => {
+        const postTable = document.getElementById("postTable");
+
+        postTable && postTable.innerHTML.trim() === "" && renderPosts(cachedPosts);
+            
+    }, 1000);
+
+    // Detecta cuando la página es visible y actualiza si es necesario
+    document.addEventListener("visibilitychange", () => {
+        document.visibilityState === "visible" && document.getElementById("postTable")?.innerHTML.trim() === "" 
+        && renderPosts(cachedPosts);
+    });
+});
 
 async function getPosts() {
     const token = localStorage.getItem("token");

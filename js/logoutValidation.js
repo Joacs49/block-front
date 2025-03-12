@@ -26,7 +26,6 @@ document.querySelector(".logout").addEventListener("click" ,async function(event
         localStorage.removeItem("token");
         localStorage.removeItem("name");
         localStorage.removeItem("email");
-        localStorage.removeItem("pass");
         localStorage.removeItem("id");
         localStorage.removeItem("posts");
         localStorage.removeItem("lastVisit");

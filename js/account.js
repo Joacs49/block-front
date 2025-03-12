@@ -5,13 +5,32 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = document.getElementById("name_account");
         const email = document.getElementById("email");
 
-        name && email && (() => {
+        name && email (() => {
             loadUserData();
             obs.disconnect();
         })();
+        
     });
 
     observer.observe(document.getElementById("dynamic-content"), { childList: true, subtree: true });
+
+    setInterval(() => {
+        const name = document.getElementById("name_account");
+        const email = document.getElementById("email");
+
+        name && email && name.value.trim() === "" && email.value.trim() === "" && variablesCache(name, email);
+        
+    }, 1000);
+
+    document.addEventListener("visibilitychange", () => {
+        const name = document.getElementById("name_account");
+        const email = document.getElementById("email");   
+
+        if (document.visibilityState === "visible") {
+            variablesCache(name, email); 
+        }
+        
+    });
 });
 
 async function loadUserData() {
@@ -34,4 +53,9 @@ async function loadUserData() {
     } catch (error) {
         console.error("Error al obtener los datos del usuario: ", error);
     }
+}
+
+function variablesCache(name, email) {
+    name.value = localStorage.getItem("name") || "";
+    email.value = localStorage.getItem("email") || "";
 }
