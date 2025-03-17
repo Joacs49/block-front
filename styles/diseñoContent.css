@@ -27,31 +27,35 @@ main {
 }
 
 .container-section {
-    width: 330px;
-    height: 360px;
-    background-color: var(--color-fondo-tarjeta);
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-top: 35px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-wrap: wrap; /* Permitir que las tarjetas se muevan a la siguiente fila si no caben */
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px; 
+    background-color: var(--color-fondo); 
 }
 
 .container-article {
+    width: 300px; 
+    height: auto; 
     display: flex;
     flex-direction: column;
     align-items: self-start;
-    margin-left: 20px;
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
 }
 
 .container-article h1 {
-    font-size: 2.2rem;
-    margin-top: 10px;
+    font-size: 2rem;
+    margin: 10px 20px 0 20px; 
     color: var(--color-title);
 }
 
 .container-article p {
-    width: 78%;
-    margin-top: 10px;
+    width: auto;
+    margin: 10px 20px; 
     font-size: 1.4rem;
     color: var(--color-parrafo);
     text-align: start;
@@ -64,16 +68,16 @@ main {
     background-color: var(--color-title);
     color: var(--color-fondo-tarjeta);
     border-radius: 5px;
-    display: flex;             
-    justify-content: center;   
+    display: flex;
+    justify-content: center;
     align-items: center;
     line-height: 1.5;
-    margin-top: 20px;
+    margin: 10px 20px 20px 20px; 
 }
 
 .container-article a:hover {
     background-color: var(--color-hover-boton);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .container-image {
@@ -84,7 +88,35 @@ main {
 }
 
 .container-image img {
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 10px 10px 0 0; 
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container-article {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container-article {
+        width: 100%; 
+    }
+
+    .container-article h1 {
+        font-size: 1.8rem; /
+    }
+
+    .container-article p {
+        font-size: 1.2rem; 
+    }
+
+    .container-article a {
+        width: 80px; 
+        height: 35px; 
+        font-size: 1.2rem; 
+    }
 }

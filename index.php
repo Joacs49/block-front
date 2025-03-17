@@ -8,7 +8,7 @@
 <body>
     <?php include("./src/header/header.html") ?>
 
-    <?php include("./src/page/content.html") ?>
+    <?php include("./src/page/content.php") ?>
 
     <?php include("./src/footer/footer.html") ?>
 </body>

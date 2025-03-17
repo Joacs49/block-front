@@ -9,11 +9,6 @@
     </div>
 
     <div>
-        <h2>Likes</h2>
-        <p></p>
-    </div>
-
-    <div>
         <h2>Visitas</h2>
         <p id="cantidadView"></p>
     </div>
