@@ -4,6 +4,41 @@
     box-sizing: border-box;
 }
 
+.container-data-importat {
+    display: flex;
+    margin-top: 15px;
+}
+
+/* Estilos para la paginación */
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 15px;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
 .table-posts {
     border-collapse: collapse;
     margin-left: 20px;
@@ -86,7 +121,6 @@
     background-color: #4ecdc4;
     text-decoration: none;
     padding: 10px;
-    margin-top: 150px;
     margin-left: 20px;
     border-radius: 5px;
     display: flex;

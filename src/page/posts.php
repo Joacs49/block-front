@@ -16,6 +16,13 @@
     <tbody id="postTable">
 
     </tbody>
+    
+    
 </table>
 
-<a href="" class="new-post">Crear Nuevo Post</a>
+<div class="container-data-importat">
+    <a href="" class="new-post">Crear Nuevo Post</a>
+    <div id="pagination" class="pagination"></div>
+</div>
+
+
