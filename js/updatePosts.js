@@ -38,7 +38,7 @@ async function getPosts(page = 1) {
         const posts = result.data || []; // Datos de la página actual
         const totalPages = result.last_page || 1; // Total de páginas
 
-        console.log("Datos obtenidos:", posts);
+        console.log("Datos obtenidos:", posts); // Verifica los datos obtenidos
         console.log("Total de páginas:", totalPages);
 
         cachedPosts = posts; // Actualiza los datos de la página actual
@@ -59,17 +59,18 @@ function renderPosts(posts, totalPages) {
 
     postTable.innerHTML = "";
 
-    // Renderizar los posts de la página actual
     posts.forEach((post) => {
+        console.log("Post ID:", post.id_notice); // Verifica si el ID está presente
         const row = document.createElement("tr");
+        row.setAttribute("data-id", post.id_notice);
         row.innerHTML = `
             <td>${post.title || "Sin título"}</td>
             <td>${post.fechaPublicacion || "Sin fecha"}</td>
             <td colspan="2">
-                <a href="" class="color--yellow" id="editarCampos">
+                <a href="#" class="color--yellow editarCampos">
                     <span><img src="../../img/icon/edit.png" alt="edit"></span> Editar
                 </a>
-                <a href="" class="color--red" id="eliminarCampos">
+                <a href="#" class="color--red eliminarCampos" data-id="${post.id_notice}">
                     <span><img src="../../img/icon/delete.png" alt="delete"></span> Eliminar
                 </a>
             </td>
@@ -77,7 +78,9 @@ function renderPosts(posts, totalPages) {
         postTable.appendChild(row);
     });
 
-    // Renderizar los botones de paginación
+    console.log("Elementos con clase 'eliminarCampos':", document.querySelectorAll(".eliminarCampos")); // Debug
+
+    addDeleteEvent(); 
     renderPagination(totalPages);
 }
 
@@ -117,3 +120,45 @@ function renderPagination(totalPages) {
     });
     pagination.appendChild(nextButton);
 }
+
+function addDeleteEvent() {
+    document.querySelectorAll(".eliminarCampos").forEach((button) => {
+        button.addEventListener("click", async (event) => {
+            event.preventDefault();
+
+            const noticeId = event.currentTarget.getAttribute("data-id");
+            console.log("ID obtenido del botón:", noticeId); // Verifica el ID obtenido
+
+            if (!noticeId) {
+                console.error("No se encontró el ID de la noticia.");
+                return;
+            }
+
+            const token = localStorage.getItem("token");
+
+            if (!confirm("¿Estás seguro de que deseas eliminar esta noticia?")) {
+                return;
+            }
+
+            try {
+                const response = await axios.delete(
+                    `http://127.0.0.1:8000/api/notices/destroyNotices/${noticeId}`,
+                    {
+                        headers: { Authorization: `Bearer ${token}` },
+                    }
+                );
+
+                console.log(response.data.message || "Noticia eliminada");
+
+                // Eliminar la fila de la tabla
+                document.querySelector(`tr[data-id="${noticeId}"]`)?.remove();
+
+            } catch (error) {
+                console.error("Error al eliminar la noticia: ", error);
+            }
+        });
+    });
+
+    console.log("Eventos de eliminación agregados.");
+}
+
